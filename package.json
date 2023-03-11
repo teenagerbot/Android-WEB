@@ -1,0 +1,89 @@
+{
+  "name": "AEm",
+  "displayName": "Android WEB",
+  "description": "Переглядай свої та чужі сайти в мобільному режимі",
+  "version": "0.0.1",
+  "publisher": "JSLearn",
+  "author": {
+		"name": "JSLearn",
+		"email": "voloda2004@i.ua",
+		"url": "https://jslearn.teleweb.repl.co/main"
+	},
+	"keywords": [
+		"responsive",
+		"mobile view",
+		"browser",
+		"phone",
+		"iphone",
+		"iphone x",
+		"emulator",
+		"simulator"
+	],
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "activationEvents" : [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "AEm.androidHow",
+        "title": "Android How"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "Emulator",
+          "title": "Emulator",
+          "icon": "phone1.svg"
+        }
+      ],
+      "panel": [
+        {
+          "id": "mobileViewIconP",
+          "title": "Web Emulator",
+          "icon": "phone1.svg"
+        }
+      ]
+    },
+    "views": {
+      "Emulator": [
+        {
+          "id": "EmulWeb",
+          "name": "Screen",
+          "contextualTitle": "Emulator",
+          "icon": "phone1.svg"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "EmulWeb",
+        "contents": "Дякую за використання розширення [редактор з веб-емулятором](https://rscript.teleweb.repl.co/www/).\nЩоб перевірити готовий сайт, введи посилання, якщо сайт в тебе на локальній машині, то введи в консоль команду \nnpm install -g http-server\n це встановить веб сервер, і зайди в папку з проектом і просто запусти цю команду: \nhttp-server ./\n[Android emulator](command:AEm.androidHow)"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.75.0",
+    "@vscode/test-electron": "^2.2.2",
+    "eslint": "^8.33.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "openurl": "^1.1.1"
+  }
+}
